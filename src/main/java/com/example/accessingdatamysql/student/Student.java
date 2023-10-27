@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 import jakarta.persistence.*;
+<<<<<<< HEAD
 // import jakarta.persistence.GeneratedValue;
 // import jakarta.persistence.GenerationType;
 // import jakarta.persistence.Id;
@@ -12,6 +13,14 @@ import jakarta.persistence.*;
 
 @Entity
 @Table
+=======
+import jakarta.transaction.Transactional;
+
+
+@Entity
+@Table
+
+>>>>>>> b8f3fe1... post & delete request
 public class Student {
 
     @Id
@@ -45,7 +54,11 @@ public Student(Long id, String name, String email, LocalDate dob){
     this.dob=dob;
    
     }
+<<<<<<< HEAD
 
+=======
+// la fonction utilisee par la db
+>>>>>>> b8f3fe1... post & delete request
 public Student(String name, String email, LocalDate dob){
     this.name=name;
     this.email=email;

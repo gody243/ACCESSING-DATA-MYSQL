@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,7 +48,7 @@ public class StudentService {
        }
          studentRepository.deleteById(studentId);
     }
-
+@Transactional
     public void updateStudent(Long studentId,
                               String name,
                               String email) {

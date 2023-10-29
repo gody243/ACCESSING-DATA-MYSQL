@@ -2,20 +2,15 @@ package com.example.accessingdatamysql.student;
 
 
 import java.util.List;
-<<<<<<< HEAD
 
-=======
 import java.util.Objects;
 import java.util.Optional;
->>>>>>> b8f3fe1... post & delete request
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b8f3fe1... post & delete request
 @Service
 public class StudentService {
 
@@ -32,11 +27,8 @@ public class StudentService {
     }
 
     public void addNewStudent(Student student){
-<<<<<<< HEAD
-        System.out.println(student);
-    }
-=======
-       Optional<Student>studentOptional= studentRepository
+
+       Optional<Student>studentOptional = studentRepository
                 .findStudentByEmail(student.getEmail());
        if(studentOptional.isPresent()){
            throw new IllegalStateException("email taken");
@@ -62,13 +54,13 @@ public class StudentService {
         Student student = studentRepository.findById(studentId)
                 .orElseThrow(()->new IllegalStateException("student with id "+studentId+" does not exist"));
         if (name !=null &&
-                name.length()>0 &&
+                !name.isEmpty() &&
                 !Objects.equals(student.getName(),name)){
             student.setName(name);
         }
 
         if (email !=null &&
-                email.length()>0 &&
+                !email.isEmpty() &&
                 !Objects.equals(student.getEmail(),email)){
            Optional<Student>studentOptional=studentRepository
                    .findStudentByEmail(email);
@@ -78,5 +70,5 @@ public class StudentService {
             student.setEmail(email);
         }
     }
->>>>>>> b8f3fe1... post & delete request
+
 }
